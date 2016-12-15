@@ -16,10 +16,7 @@ Cell::~Cell()
 void Cell::setValue(int val)
 {
 	value = val;
-	std::vector<int> currentValues = possibleValues;
-	for (auto value : currentValues)
-		if (value != val)
-			removePossible(value);
+	possibleValues.erase(std::remove_if(possibleValues.begin(), possibleValues.end(), Eraser(val)), possibleValues.end());
 }
 
 void Cell::removePossible(int val)

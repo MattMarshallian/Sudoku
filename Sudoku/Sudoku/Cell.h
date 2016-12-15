@@ -29,3 +29,14 @@ private:
 
 };
 
+struct Eraser
+{
+	Eraser(int number_in) : number_in(number_in) {}
+	int number_in;
+	bool operator()(int i) const
+	{
+		return i != number_in;
+	}
+};
+
+
