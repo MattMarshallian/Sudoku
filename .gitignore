@@ -31,3 +31,8 @@
 Sudoku/Sudoku.VC.VC.opendb
 *.suo
 Sudoku/Sudoku.VC.db
+*.ilk
+*.pdb
+*.tlog
+*.idb
+*.log
