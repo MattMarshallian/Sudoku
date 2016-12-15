@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+*.ipch
+Sudoku/Sudoku.VC.VC.opendb
+*.suo
+Sudoku/Sudoku.VC.db
