@@ -36,3 +36,4 @@ Sudoku/Sudoku.VC.db
 *.tlog
 *.idb
 *.log
+*.cache

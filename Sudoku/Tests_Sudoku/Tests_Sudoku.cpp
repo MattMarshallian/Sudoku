@@ -2,7 +2,8 @@
 //
 
 #include "stdafx.h"
-#include <gtest/gtest.h>
+#include <gtest\gtest.h>
+#include <gmock\gmock.h>
 
 #include "..\Sudoku\myHeader.h"
 #include "..\Sudoku\Cell.h"
@@ -28,8 +29,46 @@ TEST(TestAddition, TestCanAddTwoNumbers2)
 	EXPECT_TRUE(my_add(a, b) == a + b);
 }
 
-TEST(TestSingleCell, TestCellExists)
+TEST(TestSingleCell, TestCellInitialValue)
 {
 	Cell cell;
+	EXPECT_EQ(0, cell.getValue());
+}
 
+
+TEST(TestSingleCell, TestCellSetValue)
+{
+	Cell cell;
+	cell.setValue(4);
+	EXPECT_EQ(4, cell.getValue());
+}
+
+
+TEST(TestSingleCell, TestCellInitialVector)
+{
+	Cell cell;
+	std::vector<int> test = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }; 
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibleValues));
+}
+
+
+TEST(TestSingleCell, IfValueIsSetThenClearPossiblesToTheSameValue)
+{
+	Cell cell;
+	cell.setValue(5);
+
+	std::vector<int> test = { 5 };
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibleValues));
+}
+
+TEST(TestSingleCell, RemoveSomeValuesFromPossibles)
+{
+	Cell cell;
+	cell.removePossible(3);
+	cell.removePossible(8);
+	cell.removePossible(4);
+	cell.removePossible(6);
+
+	std::vector<int> test = { 1, 2, 5, 7, 9 };
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibleValues));
 }
