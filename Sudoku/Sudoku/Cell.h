@@ -24,6 +24,14 @@ public:
 	bool isValid();
     std::vector<int>& getPossibles() { return possibles; };
 
+    struct
+    {
+        int index = 0;
+        int row = 0;
+        int col = 0;
+        int square = 0;
+    } location;
+
 private:
 	int value = 0;
     std::vector<int> possibles = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
