@@ -24,4 +24,11 @@ void Cell::setValue(int val)
 void Cell::removePossible(int val)
 {
 	possibles.erase(std::remove(possibles.begin(), possibles.end(), val), possibles.end());
+	if (possibles.size() == 1) value = possibles.front();
+}
+
+
+bool Cell::isValid()
+{
+	return value > 0 || !possibles.empty();
 }

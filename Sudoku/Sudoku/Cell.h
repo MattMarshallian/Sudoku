@@ -22,7 +22,7 @@ public:
 	int getValue() { return value; };
 	void setValue(int val);
 	void removePossible(int val);
-
+	bool isValid();
 
 private:
 	int value = 0;
