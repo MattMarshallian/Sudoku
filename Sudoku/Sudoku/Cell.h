@@ -18,13 +18,13 @@ public:
 	Cell();
 	~Cell();
 
-	std::vector<int> possibles = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	int getValue() { return value; };
 	void setValue(int val);
 	void removePossible(int val);
 	bool isValid();
+    std::vector<int>& getPossibles() { return possibles; };
 
 private:
 	int value = 0;
-
+    std::vector<int> possibles = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 };

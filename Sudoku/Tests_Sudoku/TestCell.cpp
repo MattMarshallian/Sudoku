@@ -25,7 +25,7 @@ TEST(Cell, CellInitialVector)
 {
 	Cell cell;
 	std::vector<int> test = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibles));
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.getPossibles()));
 }
 
 
@@ -35,7 +35,7 @@ TEST(Cell, IfValueIsSetThenClearPossiblesToTheSameValue)
 	cell.setValue(5);
 
 	std::vector<int> test = { 5 };
-	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibles));
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.getPossibles()));
 }
 
 
@@ -48,7 +48,7 @@ TEST(Cell, RemoveSomeValuesFromPossibles)
 	cell.removePossible(6);
 
 	std::vector<int> test = { 1, 2, 5, 7, 9 };
-	EXPECT_THAT(test, ::testing::ContainerEq(cell.possibles));
+	EXPECT_THAT(test, ::testing::ContainerEq(cell.getPossibles()));
 }
 
 

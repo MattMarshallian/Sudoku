@@ -32,3 +32,4 @@ bool Cell::isValid()
 {
 	return value > 0 || !possibles.empty();
 }
+
