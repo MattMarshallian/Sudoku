@@ -37,3 +37,4 @@ Sudoku/Sudoku.VC.db
 *.idb
 *.log
 *.cache
+*.testdurations

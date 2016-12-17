@@ -5,7 +5,6 @@
 #include <gtest\gtest.h>
 #include <gmock\gmock.h>
 
-#include "..\Sudoku\myHeader.h"
 #include "..\Sudoku\Cell.h"
 
 int main(int ac, char* av[])
@@ -14,20 +13,6 @@ int main(int ac, char* av[])
 	return RUN_ALL_TESTS();
 }
 
-
-TEST(TestAddition, TestCanAddTwoNumbers)
-{
-	int a = 5;
-	int b = 8;
-	EXPECT_TRUE(my_add(a,b) == a + b);
-}
-
-TEST(TestAddition, TestCanAddTwoNumbers2)
-{
-	int a = -5;
-	int b = -128;
-	EXPECT_TRUE(my_add(a, b) == a + b);
-}
 
 TEST(TestSingleCell, TestCellInitialValue)
 {
