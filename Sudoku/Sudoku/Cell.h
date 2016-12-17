@@ -18,7 +18,7 @@ public:
 	Cell();
 	~Cell();
 
-	std::vector<int> possibleValues = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	std::vector<int> possibles = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	int getValue() { return value; };
 	void setValue(int val);
 	void removePossible(int val);
