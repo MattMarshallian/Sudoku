@@ -29,10 +29,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tests_Sudoku.cpp">
+    <ClCompile Include="TestCell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestCell.cpp">
+    <ClCompile Include="Tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSudokuTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

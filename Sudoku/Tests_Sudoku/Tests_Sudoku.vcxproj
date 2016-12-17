@@ -160,7 +160,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TestCell.cpp" />
-    <ClCompile Include="Tests_Sudoku.cpp" />
+    <ClCompile Include="TestSudokuTable.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sudoku\Sudoku.vcxproj">
