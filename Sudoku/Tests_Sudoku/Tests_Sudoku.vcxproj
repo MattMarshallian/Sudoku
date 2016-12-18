@@ -162,6 +162,7 @@
     <ClCompile Include="TestCell.cpp" />
     <ClCompile Include="TestSudokuTable.cpp" />
     <ClCompile Include="Tests.cpp" />
+    <ClCompile Include="TestValidation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sudoku\Sudoku.vcxproj">

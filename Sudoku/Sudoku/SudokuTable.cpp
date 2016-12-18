@@ -42,7 +42,7 @@ std::vector<Cell*> SudokuTable::getColumn(int index)
     std::vector<Cell*> col;
     auto iter = allpCells.begin() + index;
     for (auto i = 0; i < SUDOKU_MAGIC_NUMBER; ++i)
-        col.push_back(*iter);
+        col.push_back(*(iter + i * SUDOKU_MAGIC_NUMBER));
     return col;
 }
 
@@ -83,6 +83,41 @@ std::vector<Cell*> SudokuTable::getSquare(int index)
 std::vector<Cell*> SudokuTable::getSquare(Cell* pCell)
 {
     return getSquare(pCell->location.square);
+}
+
+bool SudokuTable::isValid()
+{
+    for (int i = 1; i <= SUDOKU_MAGIC_NUMBER; ++i)
+    {
+        for (int r = 0; r < SUDOKU_MAGIC_NUMBER; ++r)
+        {
+            int counter_i = 0;
+            auto row = getRow(r);
+            for (auto cell : row)
+                if (cell->getValue() == i) ++counter_i;
+            if (counter_i > 1) return false;
+        }
+
+        for (int c = 0; c < SUDOKU_MAGIC_NUMBER; ++c)
+        {
+            int counter_i = 0;
+            auto col = getColumn(c);
+            for (auto cell : col)
+                if (cell->getValue() == i) ++counter_i;
+            if (counter_i > 1) return false;
+        }
+
+        for (int s = 0; s < SUDOKU_MAGIC_NUMBER; ++s)
+        {
+            int counter_i = 0;
+            auto square = getSquare(s);
+            for (auto cell : square)
+                if (cell->getValue() == i) ++counter_i;
+            if (counter_i > 1) return false;
+        }
+
+    }
+    return true;
 }
 
 

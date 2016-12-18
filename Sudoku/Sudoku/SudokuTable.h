@@ -24,6 +24,8 @@ public:
     std::vector<Cell*> getSquare(int index);   // zwraca wektor pointerów do komórek we wskazanym kwadracie
     std::vector<Cell*> getSquare(Cell* pCell); // przeci¹¿ona metoda
 
+    bool isValid();
+
 private:
     int setFixRow(Cell* pCell);
     int setFixColumn(Cell* pCell);
